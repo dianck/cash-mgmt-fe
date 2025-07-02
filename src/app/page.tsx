@@ -1,4 +1,4 @@
-import Display from "./components/display";
+
 
 export default function Home() {
   const name: string = "Andi";
