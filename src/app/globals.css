@@ -77,3 +77,11 @@ body {
   top: 0;
 }
 
+.btn-foreground {
+  background-color: var(--foreground);
+  color: white;
+}
+.btn-foreground:disabled {
+  background-color: #ccc;
+  color: #888;
+}

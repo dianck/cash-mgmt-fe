@@ -1,22 +1,61 @@
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
+import { Bounce, ToastContainer } from "react-toastify";
+import Navbar from "@/components/navbar";
+import { SessionProvider } from "next-auth/react";
+import { ThemeProvider } from "@/context/ThemeContext";
+import { auth } from "@/lib/auth";
 
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
 
-export default function Home() {
-  const name: string = "Andi";
-  const usia: number = 20;
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: `${process.env.NEXT_PUBLIC_BRAND} Event Management`,
+  description: `${process.env.NEXT_PUBLIC_BRAND} Event Management`,
+};
+
+export default async function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  const session = await auth();
+  console.log("Session (server):", session);
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <div className="content">
-        ksldfaaaaaksfadkjksfdajlfdsakljls
-        sdlakf;lksad;kgl;asdkg;l
-        gdsalk;lgdsak;lkgsda
-        sadlg;lkgdsal;ks;ldag
-        ;sldakg;lkgds;lak;lgdsk;lkg
-        ;ldsakg;lkas;gd
-        lsdagl;k;lgsak
-        dsal;gk;lkgdsa;lgksa;lk;l
-        kldsjfakljgsa ';lsdkglk
-        lsadkg;lk;lgsdak'
-      </div>
-    </div>
+    <html lang="en">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}>
+        <ThemeProvider>
+          <SessionProvider session={session}>
+            {/* Fixed Navbar */}
+            <div className="fixed top-0 w-full z-50">
+              <Navbar />
+            </div>
+
+            {/* Content shifted down by navbar height */}
+            <main className="pt-16">
+              {children}
+            </main>
+          </SessionProvider>
+        </ThemeProvider>
+
+        <ToastContainer
+          position="bottom-right"
+          autoClose={3000}
+          draggable
+          theme="dark"
+          closeOnClick
+          transition={Bounce}
+        />
+      </body>
+    </html>
   );
 }
