@@ -80,14 +80,14 @@ export default function Navbar() {
           {/* Logo */}
           <div className="navbar-title">
             <Link href="/" className="navbar-title flex items-center space-x-2">
-              <Image
-                alt="logo-eventique"
-                src="/logo4.png"
-                width={30}
-                height={30}
-                className="h-10 w-10"
-                priority
-              />
+            {/* <Image
+              alt="logo-eventique"
+              src={process.env.NEXT_PUBLIC_LOGO || "/fallback-logo.png"}
+              width={30}
+              height={30}
+              className="h-10 w-10"
+              priority
+            /> */}
               <span className="navbar-title text-lg font-semibold">
                 {process.env.NEXT_PUBLIC_BRAND}
               </span>
