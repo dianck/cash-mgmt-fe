@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import Logout from "./logout";
 import { useSession } from "next-auth/react";
-import Image from "next/image";
+// import Image from "next/image";
 
 type NavItem =
   | { label: string; subItems: { label: string; href: string }[] }
