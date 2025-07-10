@@ -45,12 +45,13 @@ export default function VerifyPage({ token }: { token: string }) {
       <div className="text-black flex gap-2 animate-bounce">
         <Image
           alt="logo"
-          src={process.env.NEXT_PUBLIC_LOGO || "/fallback-logo.png"}
+          src={`/${(process.env.NEXT_PUBLIC_LOGO || "fallback-logo.png").replace(/^\/+/, "")}`}
           width={100}
           height={100}
           className="h-8 w-8"
           priority
         />
+
 
         <span className="self-center text-2xl font-semibold whitespace-nowrap animate-pulse">
           {msg}
