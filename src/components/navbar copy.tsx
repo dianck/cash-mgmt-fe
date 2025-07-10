@@ -85,7 +85,7 @@ export default function Navbar() {
           <div className="hidden md:flex space-x-6 relative z-50">
             {session &&
               navItems.map((item, index) => (
-                <div key={index} className="relative group" data-cy={`menu-${item.label.toLowerCase()}`}>
+                <div key={index} className="relative group">
                   {"subItems" in item ? (
                     <>
                       <div className="navbar-menu cursor-pointer text-gray-700 hover:text-indigo-600">
@@ -144,7 +144,7 @@ export default function Navbar() {
         <div className="md:hidden bg-white px-4 pt-2 pb-4 space-y-2 shadow-lg">
           {session &&
             navItems.map((item, index) => (
-              <div key={index} data-cy={`menu-${item.label.toLowerCase()}`}>
+              <div key={index}>
                 {"subItems" in item ? (
                   <>
                     <button
