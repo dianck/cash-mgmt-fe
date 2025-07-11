@@ -79,8 +79,8 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="navbar-title">
-            <Link href="/" className="navbar-title flex items-center space-x-2">
+          <div className="flex items-center">
+            <Link href="/" className="flex items-center">
               <Image
                 alt="logo"
                 src={`/${(process.env.NEXT_PUBLIC_LOGO || "fallback-logo.png").replace(/^\/+/, "")}`}
@@ -89,11 +89,12 @@ export default function Navbar() {
                 className="h-8 w-8"
                 priority
               />
-              <span className="navbar-title text-lg font-semibold ml-[1px]">
+              <span className="text-lg font-semibold ml-[1px]">
                 {process.env.NEXT_PUBLIC_BRAND}
               </span>
             </Link>
           </div>
+
 
 
           {/* Desktop Menu */}
