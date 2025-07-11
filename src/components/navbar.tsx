@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import Logout from "./logout";
 import { useSession } from "next-auth/react";
+import Image from "next/image";
 // import Image from "next/image";
 
 type NavItem =
@@ -80,15 +81,15 @@ export default function Navbar() {
           {/* Logo */}
           <div className="navbar-title">
             <Link href="/" className="navbar-title flex items-center space-x-2">
-            {/* <Image
-              alt="logo-eventique"
-              src={process.env.NEXT_PUBLIC_LOGO || "/fallback-logo.png"}
-              width={30}
-              height={30}
-              className="h-10 w-10"
-              priority
-            /> */}
-              <span className="navbar-title text-lg font-semibold">
+              <Image
+                alt="logo"
+                src={`/${(process.env.NEXT_PUBLIC_LOGO || "fallback-logo.png").replace(/^\/+/, "")}`}
+                width={10}
+                height={10}
+                className="h-8 w-8"
+                priority
+              />
+              <span className="navbar-title text-lg font-semibold ml-[1px]">
                 {process.env.NEXT_PUBLIC_BRAND}
               </span>
             </Link>
