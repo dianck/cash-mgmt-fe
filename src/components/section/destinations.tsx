@@ -95,7 +95,8 @@ const DestinationSection = () => {
   }
 
   return (
-    <div className="relative bg-gray-50 py-10 px-4 sm:px-6 lg:px-8">
+    // <div className="relative bg-gray-50 py-10 px-4 sm:px-6 lg:px-8">
+    <div className="w-full max-w-screen-xl bg-gray-50 mx-auto px-4 py-1">      
       <h2 className="text-xl font-bold mb-6 text-purple-900">
         Top destinations in <span className="text-purple-800">Indonesia</span>
       </h2>

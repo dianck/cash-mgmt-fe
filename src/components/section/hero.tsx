@@ -14,7 +14,7 @@ const categories = [
   { name: "Food & Baverage", icon: "🍽️" },
 ];
 
-const keywords = ["music", "Technology", "Business", "Education", "art", "Food", "Travel"];
+const keywords = ["Income", "Expense", "Business", "Savings", "Budgeting", "Bill", "Cash Flow", "Investment"];
 
 const HeroSection = () => {
   const [slide, setSlide] = useState(0);
