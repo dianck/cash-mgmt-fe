@@ -72,6 +72,14 @@ export default function Navbar() {
         { label: "Charging", href: "/records/routine" },
       ],
     },
+    {
+      label: "Setting",
+      subItems: [
+        { label: "Change Password", href: "/setting/change-password" },
+        { label: "Add Member", href: "/setting/add-member" },
+      ],
+    },
+
   ];
 
   return (
